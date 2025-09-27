@@ -1,0 +1,22 @@
+.zurag{
+    height: 250px;
+    width: 250px;
+}
+.dogs{
+     height: 250px;
+    width: 250px;
+}
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl9W22oOl44yXEtNWJ2rl7qKq_uyC_a_Hodg&s);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-image{
+    height: 1000px;
+    width: 1000px;
+    background-image: url(https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg);
+    background-size: cover;
+
+}
+
+
