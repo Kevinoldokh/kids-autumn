@@ -1,0 +1,35 @@
+/* .item{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin: 5px;
+    border-radius: 50%;
+    border: 3px solid black;
+    display: inline-block;
+}
+.container{
+    display: flex;
+    justify-content: ceneter;
+    gap: 30px;
+    flex-direction: row-reverse;
+    flex-wrap: reverse;
+}
+.item1{
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20211031/pngtree-abstract-bg-image_914283.png);
+    background-size: cover;
+    background-color: greenyellow;
+} */
+/* body{
+    background-color: coral;
+} */
+.black{
+    width: 50px;
+    height: 50px;
+    background-color: black;border-radius: 50%;
+}
+.flex{
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+

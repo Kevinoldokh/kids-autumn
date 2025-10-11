@@ -1,0 +1,30 @@
+form{
+    margin: 20px;
+}
+input[type = text]{
+    width: 90%;
+    height: 30px;
+    background-color: aquamarine;
+    border: none;
+}
+input[type = text]:hover{
+    width: 90%;
+    height: 30px;
+    background-color: lightblue;
+    border: none;
+}
+input[type = password]{
+    width: 90%;
+    height: 30px;
+    background-color: aquamarine;
+    border: none;
+}
+input[type = password]:hover{
+    width: 90%;
+    height: 30px;
+    background-color: lightblue;
+    border: none;
+}
+h1{
+    text-align: center;
+}
