@@ -1,0 +1,65 @@
+.item{
+    height: 100px;
+    width: 150px;
+    background-color: aqua;
+    
+}
+.container{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.img1{
+    background-image: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMTYtYy0wOF8xLWtzaDZtemEzLmpwZw.jpg);
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+}
+.image{
+    text-align: center;
+    width: 200px;
+    border: 2px solid grey;
+}
+.image:hover{
+    text-align: center;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.img2{
+    background-image: url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?semt=ais_hybrid&w=740&q=80);
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+}
+.img3{
+    background-image: url(https://t4.ftcdn.net/jpg/04/89/68/23/360_F_489682374_ckc0OVyT6Av0NGcuYbwBSCxy62blF4CQ.jpg);
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+}
+.image11{
+    text-align: center;
+    width: 200px;
+    border: 2px solid grey;
+}
+.image11:hover{
+    text-align: center;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.image12{
+    text-align: center;
+    width: 200px;
+    border: 2px solid grey;
+}
+.image12:hover{
+    text-align: center;
+    width: 200px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.gallery{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}

@@ -1,0 +1,70 @@
+.sun{
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    box-shadow: 0px 0px 10px white;
+    border-radius: 50%;
+    background-image: url(https://media.istockphoto.com/id/1156217577/photo/sun-isolated-in-deep-black-background.jpg?s=612x612&w=is&k=20&c=PXEbeofU6dJaje5g0z7qSKXUxJ8E1Lji-L1r9bYLK4g=);
+}
+.container{
+    width: 40em;
+    height: 40em;
+    position: relative;
+    background-color: black;
+    font-size: 10px;
+    background-image: url(https://cdn.hswstatic.com/gif/All-of-the-matter-in-the-same-location.jpg);
+    background-size: cover;
+}
+.earth::before{
+    content: '';
+    width: 3em;
+    height: 3em;
+    background-color: aqua;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.8em;
+    right: 2.8em;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/The_Blue_Marble%2C_AS17-148-22727.jpg/1200px-The_Blue_Marble%2C_AS17-148-22727.jpg);
+    background-size: cover;
+}
+.moon::before{
+    content: '';
+    width: 1.2em;
+    height: 1.2em;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.8em;
+    right: 0.2em;
+    background-image: url(https://www.nisenet.org/sites/default/files/styles/product_full_large_cropped/public/moon_lro_credit-_nasa-gsfc-arizona_state_university2017.jpg?h=549d8674&itok=zgo2vc_C);
+    background-size: cover;
+}
+.earth , .moon{
+    position: absolute;
+    border-style: solid;
+    border-color:  white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0em 0em;
+    border-radius: 50%;
+}
+.earth{
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 1.7s linear infinite;
+}
+.moon{
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 3.7s linear infinite;
+}
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+}

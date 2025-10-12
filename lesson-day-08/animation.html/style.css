@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(255, 252, 252);
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 15px;
+    animation: slide-right 3s;
+}
+@keyframes slide-right{
+    from{
+        transform: translateX(0);
+        background-color: blue;
+    }
+    to{
+        transform: translateX(200px);
+        background-color: red;
+    }
+}
