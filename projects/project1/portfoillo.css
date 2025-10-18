@@ -1,0 +1,132 @@
+.links{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: #92b16a 0px 1px 5px;
+}
+.name{
+    color: #75C310;
+}
+.green{
+    color: #75C310;
+    
+}
+.contact{
+    width: 109px;
+    height: 24px;
+    color: white;
+    background-color: #75C310;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 10px;
+     font-family: Montserrat;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 13px;
+}
+.font{
+    font-family: Montserrat;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(./Montserrat-VariableFont_wght.ttf);
+}
+h3{
+    font-family: Montserrat;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 24px;
+}
+.text{
+    font-family: Poppins;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(./Poppins-Regular.ttf);
+}
+.title{
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 40px;
+    font-style: bold;
+}
+.go{
+    width: 139px;
+    height: 34px;
+    color: white;
+    background-color: #75C310;
+    text-align: center;
+    border-radius: 24px;
+     font-family: Montserrat;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 13px;
+    align-content: center;
+}
+.main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.img{
+    margin-top: 40px;
+}
+.title11{
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 40px;
+    font-style: bold;
+}
+.text11{
+    font-family: Poppins;
+}
+.mainer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.go11{
+    width: 139px;
+    height: 34px;
+    color: white;
+    background-color: #75C310;
+    text-align: center;
+    border-radius: 24px;
+     font-family: Montserrat;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 13px;
+    align-content: center;
+}
+.contactus{
+    width: 139px;
+    height: 34px;
+    color: white;
+    background-color: #75C310;
+    border-radius: 24px;
+     font-family: Montserrat;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 13px;
+    align-content: center;
+    margin: auto;
+}
+.today{
+    text-align: center;
+}
+.title44{
+   font-family: Montserrat;
+   font-weight: 700;
+    font-size: 40px;
+}
+.text44{
+    font-family: Poppins;
+}

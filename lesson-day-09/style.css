@@ -1,0 +1,23 @@
+.item{
+   width: 200px;
+   height: 100px;
+   background-color: red;
+   margin: 5px;
+   border-radius: 50%;
+   border: solid 2px black;
+}
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+h1{
+    text-align: center;
+    color: blue;
+    font-family: Anton-Regular;
+}
+@font-face {
+    font-family: Anton-Regular;
+    src: url(./Anton-Regular.ttf);
+}
