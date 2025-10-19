@@ -1,0 +1,45 @@
+.red{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+.blue{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+}.orange{
+    width: 150px;
+    height: 150px;
+    background-color: orange;
+}.yellow{
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+}
+.green{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+    background-color: rgba(255, 167, 169);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+}
+main{
+    background-color: aquamarine;
+    height: 300px;
+    padding-top: 200px;
+}
+footer{
+    background-color: rgba(255, 167, 169);
+    height: 50px;
+    margin-top: 5px;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 10px;
+}
