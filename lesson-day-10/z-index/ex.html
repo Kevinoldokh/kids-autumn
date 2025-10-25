@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Интерактив Дадлага</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .panel h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2196f3;
+        }
+
+        .info-box h3 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .playground {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #ddd;
+        }
+
+        .layer {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 15px;
+        }
+
+        .layer:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+        }
+
+        .layer-label {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .layer-z {
+            font-size: 2em;
+            font-weight: bold;
+            opacity: 0.7;
+        }
+
+        #layer1 {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+
+        #layer2 {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            top: 100px;
+            left: 150px;
+            z-index: 2;
+        }
+
+        #layer3 {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            top: 150px;
+            left: 250px;
+            z-index: 3;
+        }
+
+        #layer4 {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            top: 200px;
+            left: 350px;
+            z-index: 4;
+        }
+
+        .controls {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .control-group input[type="range"]::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        .value-display {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .quiz-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            margin-top: 30px;
+        }
+
+        .quiz-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        .scenario {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 3px solid #ff9a76;
+        }
+
+        .scenario h3 {
+            color: #c0392b;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .scenario-demo {
+            position: relative;
+            height: 300px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 20;
+            text-align: center;
+        }
+
+        .modal h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .close-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .navbar-demo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            z-index: 100;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 50;
+        }
+
+        .content-area {
+            padding: 80px 20px 20px 20px;
+        }
+
+        .card {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .rules-box {
+            background: #fff9c4;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #fbc02d;
+            margin: 20px 0;
+        }
+
+        .rules-box h3 {
+            color: #f57f17;
+            margin-bottom: 15px;
+        }
+
+        .rules-box ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .rules-box li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏔️ Z-Index: </h1>
+            <p>Элементүүдийг хэрхэн давхарлах талаар суралцаарай</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Left Panel: Theory -->
+            <div class="panel">
+                <h2>📚 Z-Index гэж юу вэ?</h2>
+                
+                <div class="info-box">
+                    <h3>Үндсэн ойлголт</h3>
+                    <p><strong>Z-index</strong> нь элементүүдийн давхрах дарааллыг удирддаг. Энэ нь "давхаргуудын уул" гэж төсөөлж болно - өндөр утга нь дээд давхарга, бага утга нь доод давхарга гэсэн үг.</p>
+                </div>
+
+                <div class="rules-box">
+                    <h3>⚠️ Чухал дүрмүүд:</h3>
+                    <ul>
+                        <li><span class="highlight">z-index</span> нь зөвхөн <span class="highlight">position</span> шинж чанартай элементүүдэд л ажиллана (relative, absolute, fixed, sticky)</li>
+                        <li>Том тоо = Дээд давхарга</li>
+                        <li>Бага тоо = Доод давхарга</li>
+                        <li>Сөрөг утга ашиглаж болно (жишээ: z-index: -1)</li>
+                        <li>Үндсэн утга нь <strong>auto</strong> (z-index: 0 гэсэн утгатай адил)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="background: #ffebee; border-left-color: #f44336;">
+                    <h3>🎯 Хэзээ ашиглах вэ?</h3>
+                    <p><strong>Модал цонх:</strong> Бусад агуулгын дээр харагдах<br>
+                    <strong>Dropdown цэс:</strong> Бусад элементийн дээр нээгдэх<br>
+                    <strong>Navbar:</strong> Гүйлгэхэд дээд талд үлдэх<br>
+                    <strong>Tooltip:</strong> Элементийн дээр харагдах<br>
+                    <strong>Давхарласан дизайн:</strong> Зургууд, карт хооронд</p>
+                </div>
+            </div>
+
+            <!-- Right Panel: Interactive Playground -->
+            <div class="panel">
+                <h2>🎮 Интерактив Тоглоом</h2>
+                <p style="margin-bottom: 20px; color: #666; font-size: 1.1em;">
+                    Хайрцаг дээр дарж сонгоод z-index утгыг өөрчил!
+                </p>
+                
+                <div class="playground" id="playground">
+                    <div class="layer" id="layer1" onclick="selectLayer(1)">
+                        <div class="layer-label">Давхарга 1</div>
+                        <div class="layer-z">z: <span id="z1">1</span></div>
+                    </div>
+                    <div class="layer" id="layer2" onclick="selectLayer(2)">
+                        <div class="layer-label">Давхарга 2</div>
+                        <div class="layer-z">z: <span id="z2">2</span></div>
+                    </div>
+                    <div class="layer" id="layer3" onclick="selectLayer(3)">
+                        <div class="layer-label">Давхарга 3</div>
+                        <div class="layer-z">z: <span id="z3">3</span></div>
+                    </div>
+                    <div class="layer" id="layer4" onclick="selectLayer(4)">
+                        <div class="layer-label">Давхарга 4</div>
+                        <div class="layer-z">z: <span id="z4">4</span></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label>
+                            <span id="selectedLayer">Давхарга 1</span>-ийн Z-Index: 
+                            <span class="value-display" id="currentValue">1</span>
+                        </label>
+                        <input type="range" id="zIndexSlider" min="-5" max="10" value="1" step="1">
+                    </div>
+                    
+                    <button class="btn" onclick="resetLayers()">🔄 Анхны байдалд оруулах</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-World Scenarios -->
+        <div class="quiz-section">
+            <h2>🌍 Бодит жишээнүүд</h2>
+
+            <div class="scenario">
+                <h3>Сценари 1: Модал цонхтой вэб хуудас</h3>
+                <p>Модал цонх нь үндсэн агуулгын дээр харагдах ёстой. Харцгаая бүтэц:</p>
+                
+                <div class="scenario-demo">
+                    <div class="navbar-demo">Навигацийн самбар (z-index: 100)</div>
+                    <div class="content-area">
+                        <div class="card">Агуулга 1</div>
+                        <div class="card">Агуулга 2</div>
+                        <div class="card">Агуулга 3</div>
+                    </div>
+                    <div class="modal-backdrop"></div>
+                    <div class="modal">
+                        <h4>Модал цонх (z-index: 20)</h4>
+                        <p>Би бүх агуулгын дээр байна!</p>
+                        <button class="close-btn">Хаах</button>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>💡 Тайлбар:</h3>
+                    <p><strong>Арын талын дарлага:</strong> z-index: 10 (агуулгыг бүдгэрүүлнэ)<br>
+                    <strong>Модал цонх:</strong> z-index: 20 (дарлагын дээр)<br>
+                    <strong>Navbar:</strong> z-index: 100 (хамгийн дээр байх шаардлагатай бол)</p>
+                </div>
+            </div>
+
+            <div class="scenario">
+                <h3>Сценари 2: Dropdown цэс бүхий navbar</h3>
+                
+                <div class="scenario-demo">
+                    <div class="navbar-demo">Navbar (z-index: 100)</div>
+                    <div class="dropdown">
+                        <div style="margin-bottom: 10px;">🏠 Нүүр</div>
+                        <div style="margin-bottom: 10px;">📄 Хуудас</div>
+                        <div style="margin-bottom: 10px;">📞 Холбоо барих</div>
+                        <div style="color: #999; font-size: 0.9em;">Dropdown (z-index: 50)</div>
+                    </div>
+                    <div class="content-area">
+                        <div class="card">Энд агуулга байна</div>
+                        <div class="card">Dropdown нь миний дээр нээгдэнэ</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h3>💡 Тайлбар:</h3>
+                    <p><strong>Navbar:</strong> z-index: 100 (үргэлж дээр байх)<br>
+                    <strong>Dropdown:</strong> z-index: 50 (агуулгын дээр, navbar-ын доор)<br>
+                    <strong>Агуулга:</strong> z-index: 1 эсвэл тодорхойлоогүй (үндсэн давхарга)</p>
+                </div>
+            </div>
+
+            <div class="scenario">
+                <h3>🎯 Ухаалаг z-index утгууд</h3>
+                <div class="rules-box" style="background: #e8f5e9; border-left-color: #4caf50;">
+                    <h3>Санал болгож буй давхаргын систем:</h3>
+                    <ul>
+                        <li><strong>z-index: 1-10:</strong> Үндсэн агуулга, хүснэгт, зураг</li>
+                        <li><strong>z-index: 50-100:</strong> Dropdown, tooltip, popover</li>
+                        <li><strong>z-index: 500-900:</strong> Sticky navbar, sidebar</li>
+                        <li><strong>z-index: 1000+:</strong> Модал, нэвтрэх хэсэг, мэдэгдэл</li>
+                        <li><strong>z-index: 9999:</strong> Онцгой тохиолдол (хэт их бүү хэрэглэ!)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedLayerNum = 1;
+
+        function selectLayer(num) {
+            selectedLayerNum = num;
+            
+            // Remove previous selection
+            document.querySelectorAll('.layer').forEach(layer => {
+                layer.style.border = 'none';
+            });
+            
+            // Highlight selected
+            const layer = document.getElementById('layer' + num);
+            layer.style.border = '4px solid #ffd700';
+            
+            // Update controls
+            const currentZ = layer.style.zIndex || num;
+            document.getElementById('zIndexSlider').value = currentZ;
+            document.getElementById('currentValue').textContent = currentZ;
+            document.getElementById('selectedLayer').textContent = 'Давхарга ' + num;
+        }
+
+        document.getElementById('zIndexSlider').addEventListener('input', function(e) {
+            const value = e.target.value;
+            const layer = document.getElementById('layer' + selectedLayerNum);
+            layer.style.zIndex = value;
+            document.getElementById('z' + selectedLayerNum).textContent = value;
+            document.getElementById('currentValue').textContent = value;
+        });
+
+        function resetLayers() {
+            for (let i = 1; i <= 4; i++) {
+                const layer = document.getElementById('layer' + i);
+                layer.style.zIndex = i;
+                layer.style.border = 'none';
+                document.getElementById('z' + i).textContent = i;
+            }
+            selectedLayerNum = 1;
+            document.getElementById('zIndexSlider').value = 1;
+            document.getElementById('currentValue').textContent = 1;
+            document.getElementById('selectedLayer').textContent = 'Давхарга 1';
+            selectLayer(1);
+        }
+
+        // Initial selection
+        selectLayer(1);
+
+        console.log('Z-Index дадлага ачаалагдлаа! 🏔️');
+        console.log('Хайрцаг дээр дарж туршиж үзээрэй!');
+    </script>
+</body>
+</html>

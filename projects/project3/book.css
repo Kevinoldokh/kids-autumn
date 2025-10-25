@@ -1,0 +1,127 @@
+.Books{
+    font-family: Work-Sans;
+    display: flex;
+    gap: 450px;
+    justify-content: center;
+}
+.Books2{
+    display: flex;
+    gap: 50px;
+}
+.Books3{
+    display: flex;
+    gap: 50px;
+}
+@font-face {
+    font-family: Work-Sans;
+    src: url(./WorkSans-VariableFont_wght.ttf);
+}
+.lightpink{
+    background-color: lightpink;
+    width: 80px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+    align-content: center;
+    margin-top: 10px;
+}
+.pink{
+    background-color: deeppink;
+    width: 100px;
+    height: 35px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+    margin-top: 10px;
+}
+.header{
+   box-shadow: 0px 0px 10px rgb(233, 242, 233);
+   display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+}
+.largebox{
+    width: 1200px;
+    height: 456px;
+    background-color: rgb(251, 221, 244);
+    border-radius: 20px;
+    margin: auto;
+}
+.audio{
+    font-family: Work-Sans;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.paragraph{
+    font-family: Work-Sans;
+    padding-left: 50px;
+}
+.pink2{
+    background-color: deeppink;
+    width: 300px;
+    height: 35px;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+}
+.white{
+    background-color: rgb(255, 250, 255);
+    width: 300px;
+    height: 35px;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+}
+.nothing{
+    display: flex;
+    gap: 100px;
+    position: relative;
+    padding-left: 50px;
+    top: -450px;
+    
+}
+.images{
+   position: relative;
+   top: -277px;
+   left: 626px;
+}
+.images2{
+    position: relative;
+   top: -277px;
+   left: 150px;
+}
+.para2{
+    position: relative;
+    left: 550px;
+}
+/* .book1{
+    position: relative;
+    left: 550px;
+}
+.book2{
+    position: relative;
+    left: 550px;
+}
+.book3{
+    position: relative;
+    left: 550px;
+}
+.book4{
+    position: relative;
+    left: 550px;
+}.book5{
+    position: relative;
+    left: 550px;
+}.book6{
+    position: relative;
+    left: 550px;
+} */
+.E-books{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: auto;
+}

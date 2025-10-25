@@ -1,0 +1,88 @@
+.data{
+    font-family: Sans;
+    justify-content: start;
+}
+@font-face {
+    font-family: Sans;
+    src: url(./BBHSansHegarty-Regular.ttf);
+}
+.block{
+    display: flex;
+    gap: 700px;
+}
+.blocks2{
+    display: flex;
+    gap: 20px;
+}
+.blocks3{
+    display: flex;
+    gap: 20px;
+}
+.head{
+   display: flex;
+}
+header{
+    box-shadow: 0px 0px 10px rgb(233, 242, 233);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 50px;
+}
+.underline{
+    text-decoration: underline;
+}
+.green{
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #4bab66;
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+.picture{
+    margin-top: 200px;
+    margin-left: 100px;
+    height: 500px;
+}
+.mainer{
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+.paragraph{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin-top: -400px;
+    margin-right: 85px;
+}
+.header34{
+    display: flex;
+    justify-content: center;
+    margin-left: -200px;
+    gap: 40px;
+}
+.header3{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #4bab66;
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+.header4{
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #d8ed91;
+    text-align: center;
+    align-content: center;
+}
+.books6{
+    background-color: black;
+}
