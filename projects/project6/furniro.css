@@ -1,0 +1,20 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+header{
+    background-color: rgb(255, 255, 255);
+    width: 2250px;
+    box-shadow: 0px 0px 10px rgb(230, 230, 230);
+}
+body{
+    font-family: Poppins;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(./Poppins-Regular.ttf);
+}
+.search{
+    width: 30px;
+    height: 30px;
+}
