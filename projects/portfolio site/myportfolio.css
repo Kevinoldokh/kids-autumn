@@ -1,0 +1,162 @@
+body{
+    background-color: #2b2c33;
+    font-family: Code;
+}
+@font-face {
+    font-family: Code;
+    src: url(./FiraCode-VariableFont_wght.ttf);
+}
+.header{
+    display: flex;
+    justify-content: center;
+    color: white;
+    gap: 500px;
+}
+.hashtag{
+    display: flex;
+    gap: 50px;
+    margin-right: 400px;
+    margin-top: 30px;
+}
+header{
+    background-color: rgba(255, 255, 255, 0);
+    width: 2220px;
+    height: 100px;
+}
+.icode{
+    display: flex;
+    margin-top: 30px;
+}
+.logo{
+    width: 30px;
+    height: 15px;
+}
+.group{
+    display: flex;
+    gap: 200px;
+    margin-right: 600px;
+}
+.kevin{
+    margin-left: 1400px;
+}
+.sentence{
+    font-size: 40px;
+    color: orange;
+    margin-left: 250px;
+    margin-top: -470px;
+}
+.small{
+    color: grey;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+.age{
+    color: white;
+    margin-left: 250px;
+    margin-top: 50px;
+    border: solid rgb(255, 166, 0);
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+}
+.dots{
+    margin-top: 80px;
+}
+.quote{
+    margin-top: -65px;
+    margin-left: 600px;
+}
+.project{
+    margin-top: 150px;
+    margin-left: 250px;
+    width: 1600px;
+    height: 70px;
+}
+.picture{
+    width: 331px;
+    height: 201px;
+}
+.html{
+    color: grey;
+    border: solid grey 1px;
+   width: 329px;
+   margin-top: -5px;
+}
+.medium{
+    color: white;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.mine{
+    color: grey;
+    margin-left: 20px;
+}
+.live{
+    color: white;
+    margin-left: 250px;
+    margin-top: 50px;
+    border: solid rgb(255, 166, 0);
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+}
+.catch{
+    color: rgb(135, 135, 135);
+    margin-left: 250px;
+    margin-top: 50px;
+    border: solid rgb(152, 152, 152);
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+}
+.books{
+    display: flex;
+    margin-left: 400px;
+    gap: 100px;
+}
+.bill{
+    display: flex;
+    margin-left: -250px;
+    justify-content: center;
+}
+.catch{
+    margin-left: 20px;
+}
+
+.books1{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+}
+.books2{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+   margin-top: 100px;
+}
+.books3{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+}
+.books4{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+   margin-top: 100px;
+}
+.books5{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+}
+.books6{
+   border: solid grey 1px;
+   width: 330px;
+   height: 400px;
+   margin-top: 100px;
+}
