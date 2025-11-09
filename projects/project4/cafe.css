@@ -7,6 +7,9 @@
     width: 2300px;
     background-color: white;
 }
+body{
+    font-family: Alegreya;
+}
 .cafe{
     display: flex;
     gap: 40px;
@@ -209,4 +212,29 @@ header{
      align-content: center;
      margin-top: 40px;
 }
-
+.hold{
+    background-color: #583101;
+    width: 2200px;
+    height: 500px;
+    padding-top: 200px;
+}
+footer{
+    color: #FFF4E8;
+}
+.white{
+    font-size: 20px;
+}
+.flex{
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+}
+.energy{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-right: 100px;
+}
+.diff{
+    padding-left: 100px;
+}
