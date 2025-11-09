@@ -8,6 +8,9 @@ header{
     align-items: center;
     justify-content: space-around;
     box-shadow: #92b16a 0px 1px 5px;
+    position: fixed;
+    width: 2500px;
+    background-color: white;
 }
 .name{
     color: #75C310;
