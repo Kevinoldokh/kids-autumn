@@ -3,6 +3,9 @@
     gap:400px;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    width: 2300px;
+    background-color: white;
 }
 .cafe{
     display: flex;
